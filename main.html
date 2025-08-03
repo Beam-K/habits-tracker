@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Add Note</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<div id="Home" class="section active">
+
+    <div id="header">
+        <div id="welcomeText">
+            <h1> Hello, User!</h1>
+            <p> How do you feel today? </p>
+        </div>
+    </div>
+
+    <div class="header">
+
+        <img src="icons/icons-calendar.png" height="24" width="24"/>
+        <div id="monthHeader">
+
+        </div>
+
+
+    </div>
+
+    <div class="days-container" id="daysContainer">
+        <!-- Блоки дней будут добавлены через JavaScript -->
+    </div>
+    <!-- Блок, где будут отображаться все привычки  -->
+    <div id="habitsContainer">
+        <div id="unfulfilledHabits">
+            <span>Habits</span>
+            <div class="habit-swipe-container">
+
+            </div>
+        </div>
+        <div id="fulfilledHabits">
+            <span>Done</span>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="btn_addHabits">
+        <img src="icons/icon-addHabits.png" height="24" width="24"/>
+    </div>
+    <!-- форма для добавления привычки   -->
+
+    <div class="form_addHabits">
+        <img src="icons/icon-horizontalLine.png" id="horizontalLine" height="48" width="48"/>
+
+        <h2>Новая привычка</h2>
+
+
+        <input type="text"  class="habitInput" id="nameHabit"/>
+        <input type="hidden" id="habitColor" name="habit_color">
+        <input type="hidden" id="habitIcon" name="habit_icon">
+
+        <div id="iconAndColor">
+
+            <div class="dropdownIcon">
+                <div class="icon-picker">
+                    <div class="selected-icon" id="selectedIcon">
+
+                        <img  src="icons/icons-stars.png" width="24" height="24">
+                        <img src="icons/icon-dropdown.png" height="24" width="24"/>
+
+                    </div>
+                    <div class="icon-dropdown" id="iconDropdown">
+                        <div class="icon-option" data-icon="water"> <img src="icons/iconsTeg/icon-water.png" height="24" width="24" /> </div>
+
+                        <div class="icon-option" data-icon="book"><img src="icons/iconsTeg/icon-book.png" width="24" height="24"> </div>
+
+                        <div class="icon-option" data-icon="meditation"><img src="icons/iconsTeg/icon-meditation.png" height="24" width="24"/></div>
+
+                        <div class="icon-option" data-icon="sleep"><img src="icons/iconsTeg/icon-sleep.png" height="24" width="24"/></div>
+
+                        <div class="icon-option" data-icon="brush"><img src="icons/iconsTeg/icon-brush.png" height="24" width="24"/></div>
+
+                        <div class="icon-option" data-icon="sport"><img src="icons/iconsTeg/icon-sport.png" height="24" width="24"/></div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdownColor">
+                <div class="color-picker">
+                    <div class="selected-color" id="selectedColor">
+                        <div  id="selected"></div>
+
+                        <img src="icons/icon-dropdown.png" height="24" width="24"/>
+                    </div>
+                    <div class="color-dropdown" id="colorDropdown">
+                        <div class="color-option" data-color="light blue" id="light_blue"></div>
+                        <div class="color-option" data-color="pink" id="pink"></div>
+                        <div class="color-option" data-color="orange" id="orange"></div>
+                        <!-- Добавьте другие цвета -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="goalForHabit">
+            <p>Повторять:</p>
+            <label class="switch">
+                <input type="checkbox" id="CheckGoalForHabit">
+                <span class="slider">
+      <span class="text-on">Ежедневно</span>
+      <span class="text-off">Выборочно</span>
+    </span>
+            </label>
+        </div>
+        <div id="noDailyHabits" class="show">
+            <div class="weekday" id="Пн">Пн</div>
+            <div class="weekday" id="Вт">Вт</div>
+            <div class="weekday" id="Ср">Ср</div>
+            <div class="weekday" id="Чт">Чт</div>
+            <div class="weekday" id="Пт">Пт</div>
+
+
+            <div class="weekend" id="Сб">Сб</div>
+            <div class="weekend" id="Вс">Вс</div>
+        </div>
+<div class="btn_saveHabit">
+    <img src="icons/icon-addHabits.png" height="24" width="24"/>
+    <p>Сохранить </p>
+
+</div>
+
+
+    </div>
+</div>
+
+
+<div id="Progress" class="section">2</div>
+<div id="Habits" class="section">
+
+        <div class="habits-list">
+
+
+
+        </div> <!-- Контейнер для всех привычек -->
+
+
+
+
+
+</div>
+<div id="Settings" class="section">
+    <h2>Настройки</h2>
+    <div class="settings-content">
+        <!-- Здесь будут настройки -->
+    </div>
+
+
+
+</div>
+
+<!-- панель навигации  -->
+<div id="footer">
+    <div class="btn-foot" data-target="Home" id="Home1">
+        <img src="icons/icon-home.png" height="24" width="24"/>
+    </div>
+
+    <div class="btn-foot" data-target="Progress">
+        <img src="icons/icon-progress.png" height="24" width="24"/>
+    </div>
+
+    <div class="btn-foot" data-target="Habits">
+        <img src="icons/icon-habits.png" height="24" width="24"/>
+    </div>
+
+    <div class="btn-foot" data-target="Settings">
+        <img src="icons/icon-settings.png" height="24" width="24"/>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
